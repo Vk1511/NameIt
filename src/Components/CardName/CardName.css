@@ -1,0 +1,19 @@
+.name_con{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+        
+}
+
+.name{
+    border-radius: 1rem;
+    padding: .2rem .5rem .2rem .5rem;
+    font-size: 3rem;
+    margin: 1rem;
+    background-color: #a592f2;
+    border: .2rem solid #111d5e;
+}
+
+.name:hover{
+    box-shadow: 0 0 .4rem;
+}

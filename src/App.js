@@ -1,23 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import Head from './Components/Head/Head'
+import CardCon from './Components/CardCon/CardCon'
+import React, {useState,useEffect} from 'react';
 
 function App() {
+
+  useEffect(() => {
+    alert("Click The Name To Buy Domain!")
+  }, []) 
+
+  const name = require('@rstacruz/startup-name-generator')
+  const [title] = useState("Name It!!");
+  const [ndata, setnData] = useState([]);
+  const [headclass , setHeadclass] = useState(true)
+
+  const handleInput = (data) => {
+    data ? setHeadclass(false) : setHeadclass(true)
+    data ? setnData(name(data)) : setnData([])
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Head title={title} handleInput={handleInput} headclass={headclass}/>
+      <CardCon data={ndata}/>
     </div>
   );
 }
